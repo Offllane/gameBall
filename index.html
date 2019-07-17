@@ -169,11 +169,14 @@
 		{
 			if(having == false)
 			{
+					do
+					{
+						blockX = posBlockX();
+					} while(blockX + blockWidth > canvas.width)
 				do
 				{
-					blockX = posBlockX();
-				} while(blockX + blockWidth > canvas.width)
-				blockY = posBlockY();
+					blockY = posBlockY();
+				} while (blockY <= posY - 200 || blockY >= posY + 200)
 			}
 			having = true;
 			ctx.beginPath();
